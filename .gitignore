@@ -70,9 +70,13 @@ coverage.xml
 
 
 
-*/migrations/*
 .log
 db.sqlite3
+
+# Local diagnostic reports
+/orders/profile_check.txt
+/orders/contacts_check.txt
+/orders/contact_patch_check.txt
 
 
 # Scrapy stuff:
@@ -98,6 +102,8 @@ celerybeat-schedule
 
 # Environments
 .env
+.env.*
+.django-secret-key
 .venv
 env/
 venv/
@@ -117,3 +123,9 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+.venv/
+__pycache__/
+*.py[cod]
+.env
+db.sqlite3

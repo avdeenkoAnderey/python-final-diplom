@@ -2,6 +2,7 @@ import yaml
 from django.core.management.base import BaseCommand, CommandError
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError
+from rest_framework.exceptions import ValidationError as APIValidationError
 
 from backend.models import User
 from backend.services import import_catalog
@@ -33,6 +34,7 @@ class Command(BaseCommand):
             KeyError,
             TypeError,
             ValidationError,
+            APIValidationError,
             IntegrityError,
         ) as error:
             raise CommandError(f"Не удалось загрузить каталог: {error}") from error
